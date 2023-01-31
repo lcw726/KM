@@ -1,0 +1,34 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+	<br>
+	<font color="White" size="6" face="微軟正黑體">公司清單</font>  	
+	<br>
+	
+	<table>
+		<tr>
+			<th>台塑</th>
+			<td><a href="/fpc_engineer">工程會簡報</a> </td><td> <a href="/fpc_ai">台北AI專案會</a></td><td>專案檢討會</td>
+		</tr>
+		<tr>
+			<th>南亞</th>
+			<td><a href="/npc_engineer">工程會簡報</a> </td><td> <a href="/npc_ai">台北AI專案會</a> </td><td> <a href="/npc_project">專案檢討會</a></td>
+		</tr>
+		<tr>
+			<th>台化</th>
+			<td><a href="/fcfc_engineer">工程會簡報</a> </td><td> <a href="/fcfc_ai">台北AI專案會</a> </td><td> <a href="/fcfc_project">專案檢討會</a></td>
+		</tr>
+		<tr>
+			<th>塑化</th>
+			<td><a href="/fpcc_engineer">工程會簡報</a> </td><td> <a href="/fpcc_ai">台北AI專案會</a> </td><td>專案檢討會</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<th>報告說明</th>
+			<td><a href="/pdf_viewer?file=AI專案報告內容架構">AI專案報告內容架構</a></td>
+			<!-- <td><a href="fpc_engineer.html">工程會簡報</a> </td><td> <a href="fpc_ai.html">台北AI專案會</a></td> -->
+		</tr>
+	</table>
+{% endblock content %}
