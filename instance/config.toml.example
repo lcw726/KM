@@ -9,23 +9,23 @@ AUTH = [
 ]
 
 [TITLES]
-    "fpc_engineer"="Title names"
+    "foo"="Title names"
 
 [REPORTS]
-    [[REPORTS.fpc_engineer]]
+    [[REPORTS.foo]]
         date="2047/07/01"
         file="folder in static/pdf_files"
         title="display name"
-    [[REPORTS.fpc_engineer]]
+    [[REPORTS.foo]]
         date="2047/07/01"
         file="folder in static/pdf_files"
         title="display name"
 
-    [[REPORTS.fpc_ai]]
+    [[REPORTS.bar]]
         date="2047/07/01"
         file="folder in static/pdf_files"
         title="display name"
-    [[REPORTS.fpc_ai]]
+    [[REPORTS.bar]]
         date="2047/07/01"
         file="folder in static/pdf_files"
         title="display name"
