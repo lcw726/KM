@@ -17,7 +17,7 @@ LDAP auth is marked for devolpment under windows, please revert it back under ap
 {{static}}/pdf_files/ folder is hidden for obivios reasons, you can add your PDF files in the folder, and bind it through /instance/config.toml.
 
 ##  Install requirements 
-    pipenv sync
+    pipenv install
     or
     pip install -r requirements.txt
 
