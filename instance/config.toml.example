@@ -1,0 +1,31 @@
+SECRET_KEY = "key"
+
+LDAP_SERVER = "server ip"
+LDAP_HOST = "server name"
+
+AUTH = [
+    "foo",
+    "bar"
+]
+
+[TITLES]
+    "fpc_engineer"="Title names"
+
+[REPORTS]
+    [[REPORTS.fpc_engineer]]
+        date="2047/07/01"
+        file="folder in static/pdf_files"
+        title="display name"
+    [[REPORTS.fpc_engineer]]
+        date="2047/07/01"
+        file="folder in static/pdf_files"
+        title="display name"
+
+    [[REPORTS.fpc_ai]]
+        date="2047/07/01"
+        file="folder in static/pdf_files"
+        title="display name"
+    [[REPORTS.fpc_ai]]
+        date="2047/07/01"
+        file="folder in static/pdf_files"
+        title="display name"
