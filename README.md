@@ -1,9 +1,10 @@
 # PDF Online Viewer
 
 This project integrates PDF.js with Flask using: 
-- [PDF.js](https://mozilla.github.io/pdf.js/) for displaying PDF files
+- [flask](https://flask.palletsprojects.com/) for web framework
 - [Blueprints](http://flask.pocoo.org/docs/0.12/blueprints/) for scalability
 - [flask_login](https://flask-login.readthedocs.io/en/latest/) for the login system
+- [PDF.js](https://mozilla.github.io/pdf.js/) for displaying PDF files
 - [TOML](https://toml.io/en/) for human-readable config
 - [Gunicorn](https://gunicorn.org/) for production grade Python WSGI HTTP Server
 
