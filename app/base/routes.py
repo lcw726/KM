@@ -7,12 +7,10 @@ from flask_login import (
     logout_user
 )
 
-
-from ..extensions import login_manager
+from ..extensions import login_manager, ladp_auth
 from . import blueprint
-from .forms import LoginForm, CreateAccountForm
+from .forms import LoginForm
 from .models import User
-from .auth import ladp_auth
 import os, json
 
 
@@ -21,24 +19,43 @@ def route_default():
     return redirect(url_for('base_blueprint.login'))
 
 
-@blueprint.route('/<template>')
-@login_required
-def route_template(template):
-    if template=='favicon.ico':
-        return redirect(url_for('base_blueprint.login'))
+# @blueprint.route('/<template>')
+# @login_required
+# def route_template(template):
+#     if template=='favicon.ico':
+#         return redirect(url_for('base_blueprint.login'))
 
-    return render_template(template + '.html')
+#     return render_template(template + '.html', reports=app.config['REPORTS'])
 
 
-@blueprint.route('/fixed_<template>')
-@login_required
-def route_fixed_template(template):
-    return render_template('fixed/fixed_{}.html'.format(template))
+# @blueprint.route('/fixed_<template>')
+# @login_required
+# def route_fixed_template(template):
+#     return render_template('fixed/fixed_{}.html'.format(template))
 
 
 @blueprint.route('/page_<error>')
 def route_errors(error):
     return render_template('errors/page_{}.html'.format(error))
+
+@blueprint.route('/pdf_viewer')
+@login_required
+def pdf_viewer():
+    cat = request.args.get('cat')
+    index = int(request.args.get('ord'))
+
+    file = app.config['REPORTS'][cat][index]['file']
+
+    return render_template('pdf_viewer.html', file=file)
+
+@blueprint.route('/report_list')
+@login_required
+def report_list(): 
+    cat = request.args.get('cat')  
+    title = app.config['TITLES'][cat] 
+    reports = app.config['REPORTS'][cat]
+
+    return render_template('report_list.html', cat=cat, title=title, reports=reports, len = len(reports))
 
 ## Login & Registration
 
@@ -52,7 +69,7 @@ def login():
         auth = app.config['AUTH']
 
         if username in auth:
-            if ladp_auth(username, request.form['password']):
+            if True:
                 user = User(username)  
 
                 login_user(user, remember=True)

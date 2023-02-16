@@ -5,13 +5,14 @@ from importlib import import_module
 from .base.models import User
 from os import path
 import logging
+import toml
 
 def register_extensions(app):
     login_manager.init_app(app)
 
 
 def register_blueprints(app):
-    for module_name in ('base', 'home', 'setting'):
+    for module_name in ('base', 'home'):
         module = import_module('app.{}.routes'.format(module_name))
         app.register_blueprint(module.blueprint)
 
@@ -25,9 +26,9 @@ def configure_logs(app):
     # endif
 
 
-def create_app(config, selenium=False):
-    app = Flask(__name__, static_folder='base/static')
-    app.config.from_object(config)
+def create_app( selenium=False):
+    app = Flask(__name__, static_folder='base/static', instance_relative_config=True)
+    app.config.from_file("config.toml", load=toml.load)
     if selenium:
         app.config['LOGIN_DISABLED'] = True
     register_extensions(app)

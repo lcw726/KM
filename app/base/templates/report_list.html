@@ -1,0 +1,16 @@
+{% extends "base_site.html" %}
+
+{% block content %}
+	<br>
+		<font color="White" size="6" face="微軟正黑體">{{title}}</font>  	
+	<br>
+
+	<table>
+		{%for i in range(0, len)%}
+			<tr>
+				<th>{{reports[i]["date"]}}</th>
+				<td><a href="pdf_viewer?cat={{cat}}&ord={{i}}">{{reports[i]["title"]}}</a></td>
+			</tr>
+		{%endfor%}
+	</table>
+{% endblock content %}

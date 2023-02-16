@@ -13,6 +13,7 @@ Flask-WTF = "*"
 dash = "*"
 pandas = "*"
 gevent = "*"
+toml = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "*"

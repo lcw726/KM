@@ -3,14 +3,11 @@
 {% block content %}
 	<body  oncontextmenu="return false">
 		<br>
-		<font color="White" size="6" face="微軟正黑體">線上簡報資料</font>  
+			<font color="White" size="6" face="微軟正黑體">線上簡報資料</font>  
 		<br>
-		<iframe id="iframeID"  width="100%" height="920px" allowfullscreen >
+		
+		<iframe id="iframeID" src="static/pdfjs/viewer.html?file={{file}}" width="100%" height="920px" allowfullscreen >
 		</iframe>
 		<hr>
 	</body>
-
-	{% block javascripts %}
-		<script src="{{ url_for('static', filename='assets/js/pdf_viewer.js') }}"></script>
-	{% endblock %}
 {% endblock content %}

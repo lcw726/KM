@@ -1,36 +1,77 @@
-{% extends "plain_page.html" %}
+<!DOCTYPE HTML>
+<!--
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    {% block meta %}
+      <meta charset="utf-8" />
+      <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{% endblock meta %}
 
-{% block title %} Login {% endblock title %}
+    <title>AI簡報資料分享平台</title>
 
-{% block stylesheets %}
-  {{ super() }}
-{% endblock stylesheets %}
+    {% block stylesheets %}
+		  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/base.css') }}" />
+    {% endblock stylesheets %}
+	</head>
 
-{% block body_class %}login{% endblock body_class %}
+	<body class="homepage is-preload">
+    <!-- Header -->
+    <div id="main-wrapper">
+      <div class="container">
+        <!-- Header -->
+        <header id="header">
+          <div class="inner">
 
-{% block content %}
-  <div class="dashboard_graph">
-    <div style="width: 100%; min-height:400px;" >
-      <div class="login_wrapper">
-          <div class="animate form login_form">
-            <section class="login_content">
-              <form data-parsley-validate method="post">
-                <h1> 企業工號登入 </h1>
-                {% for field in login_form if field.widget.input_type != 'hidden'  %}
-                  <div>
-                    {{ field(class="form-control required", placeholder=field.label.text) }}
-                  </div>
-                {% endfor %}
-                <div>
-                <button type="submit" class="btn btn-default submit" name="login"> 登入 </button>
-                </div>
-                <div class="clearfix"></div>
-              </form>
-              <h4>{{ status }}</h4>
-            </section>
+            <!-- Logo -->
+            {% block top_navigation %}
+              <div class="top_nav">
+                {% include "site_template/top_navigation.html" %}
+              </div>
+            {% endblock top_navigation %}
+
           </div>
+        </header>
+
+        {% block content %}
+          <div class="dashboard_graph">
+            <div style="width: 100%; min-height:400px;" >
+              <div class="login_wrapper">
+                  <div class="animate form login_form">
+                    <section class="login_content">
+                      <form data-parsley-validate method="post">
+                        <h1> 企業工號登入 </h1>
+                        {% for field in login_form if field.widget.input_type != 'hidden'  %}
+                          <div>
+                            {{ field(class="form-control required", placeholder=field.label.text) }}
+                          </div>
+                        {% endfor %}
+                        <div>
+                        <button type="submit" class="btn btn-default submit" name="login"> 登入 </button>
+                        </div>
+                        <div class="clearfix"></div>
+                      </form>
+                      <h4>{{ status }}</h4>
+                    </section>
+                  </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        {% endblock content %}
       </div>
     </div>
-    <div class="clearfix"></div>
-  </div>
-{% endblock content %}
+
+    <!-- Footer Wrapper -->
+    {% block footer %}
+      <footer>
+        {% include "site_template/footer.html" %}
+      </footer>
+    {% endblock footer %}
+	</body>
+</html>
