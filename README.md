@@ -2,7 +2,7 @@
 
 This project integrates PDF.js with Flask using: 
 - [flask](https://flask.palletsprojects.com/) for web framework
-- [Blueprints](http://flask.pocoo.org/docs/0.12/blueprints/) for scalability
+- [Blueprints](https://flask.palletsprojects.com/en/latest/blueprints/) for scalability
 - [flask_login](https://flask-login.readthedocs.io/en/latest/) for the login system
 - [PDF.js](https://mozilla.github.io/pdf.js/) for displaying PDF files
 - [TOML](https://toml.io/en/) for human-readable config
