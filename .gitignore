@@ -1,3 +1,7 @@
+# private files
+/instance
+/app/base/static/pdf_files
+
 # byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
