@@ -1,0 +1,10 @@
+<div class="pull-right">
+  <div id="footer-wrapper">
+    <footer id="footer" class="container">
+      <div class="row">
+        <p>blablabla</p>
+      </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
