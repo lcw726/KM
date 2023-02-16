@@ -1,6 +1,6 @@
 # PDF File Online Viewing Website
 
-This project is delicated to share secret PDF files for certain people, not allow direct download but to view these files only on browsers. Although tech-savvy can still find ways to get the "secret" PDF files, most people can only copy or print screen some context from these files, which stop them from plagiarizing the PDF files.
+This project is delicated to share secret PDF files for certain people, not allow direct download but to view these files only on browsers. Although tech-savvy can still find ways to get the "secret" PDF files, most people can only copy or print screen some content from these files, which stop them from plagiarism.
 
 This project integrates PDF.js with Flask using: 
 - [flask](https://flask.palletsprojects.com/) for web framework
