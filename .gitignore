@@ -2,7 +2,7 @@
 /instance/config.toml
 /instance/申請AI簡報瀏覽權限名單.xlsx
 /app/home/templates/index.html
-/app/base/templates/footer.html
+/app/base/templates/site_template/footer.html
 /app/base/static/pdf_files/
 
 # byte-compiled / optimized / DLL files
