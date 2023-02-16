@@ -1,5 +1,6 @@
 # private files
-/instance
+/instance/config.toml
+/instance/申請AI簡報瀏覽權限名單.xlsx
 /app/base/static/pdf_files
 
 # byte-compiled / optimized / DLL files
