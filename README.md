@@ -1,18 +1,17 @@
-# Flask Gentelella
+# PDF Online Viewer
 
-[Gentelella](https://github.com/puikinsh/gentelella) is a free to use Bootstrap admin template.
+This project integrates mozilla/pdf.js with Flask using: 
+- [Blueprints](http://flask.pocoo.org/docs/0.12/blueprints/) for scalability
+- [flask_login](https://flask-login.readthedocs.io/en/latest/) for the login system (passwords hashed with bcrypt)
+- [dash](https://dash.plot.ly/)
 
-![Gentelella Bootstrap Admin Template](https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/gentelella-admin-template-preview.jpg "Gentelella Theme Browser Preview")
+SECRET_KEY must be set in /instance/config.toml.
 
-This project integrates Gentelella with Flask using: 
-- [Blueprints](http://flask.pocoo.org/docs/0.12/blueprints/) for scalability.
-- [flask_login](https://flask-login.readthedocs.io/en/latest/) for the login system (passwords hashed with bcrypt).
-- [flask_migrate](https://flask-migrate.readthedocs.io/en/latest/).
-- [dash](https://dash.plot.ly/).
+{{static}}/pdf_files/ folder is hidden for obivios reasons, you can add your PDF files in the folder, and bind it through /instance/config.toml and app/base/templates/report_list.html.
 
-Here is an example of a real project implemented using Flask-Gentelella:
-- [Online demo](http://afourmy.pythonanywhere.com/)
-- [Source code](https://github.com/afourmy/eNMS)
+LDAP auth is marked for devolpment under windows, please revert it back under app/extensions.py and app/base/routes.py.
+
+LDAP_SERVER and LDAP_HOST must be set in /instance/config.toml to make LDAP funcion normally.
 
 ##  Install requirements 
     pipenv sync
@@ -23,7 +22,3 @@ Here is an example of a real project implemented using Flask-Gentelella:
     (pipenv run) python run.py
     or 
     (pipenv run) sh run_web.sh
-
-### Default Admin User
-    username: admin
-    password: admin
